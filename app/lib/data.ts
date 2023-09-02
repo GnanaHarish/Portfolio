@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-// import corpcommentImg from "@/public/corpcomment.png";
-// import rmtdevImg from "@/public/rmtdev.png";
-// import wordanalyticsImg from "@/public/wordanalytics.png";
+import MessageIt from "@/public/MessageIt.png";
+import Artifusion from "@/public/Artifusion.png";
+import AnimeBlog from "@/public/AnimeBlog.png";
 
 export const links = [
   {
@@ -62,25 +62,25 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "MessageIt",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
+      "MessageIt is a Messenger clone, People can do one to one conversation and group chats.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: '',//corpcommentImg,
+    imageUrl: MessageIt,
   },
   {
-    title: "rmtDev",
+    title: "Artifusion",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: '',//rmtdevImg,
+      "Artifusion is an AI Image generating site which uses OpenAi's Dall-E Api to create image based on prompt given by user.",
+    tags: ["React", "Node.js", "MongoDb", "Tailwind", "Cloudinary"],
+    imageUrl: Artifusion,
   },
   {
-    title: "Word Analytics",
+    title: "AnimeBlog",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: '', //wordanalyticsImg,
+      "AnimeBlog is a website that allows users to create a blog or read about other peoples blog about anime.",
+    tags: ["Node.js", "EJS", "MongoDb", "Bootstrap"],
+    imageUrl: AnimeBlog, 
   },
 ] as const;
 
