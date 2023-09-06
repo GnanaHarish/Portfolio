@@ -25,7 +25,7 @@ export default function Skills() {
     const { ref } = useSectionView('Skills');
 
     return (
-        <section ref={ref} className='
+        <section id='skills' ref={ref} className='
         mb-28
         max-w-[53rem]
         scroll-mt-28

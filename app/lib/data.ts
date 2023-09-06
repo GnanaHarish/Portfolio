@@ -35,28 +35,20 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Accenture - Associate Software Engineer",
+    location: "Chennai, India",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
-  },
-  {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "During my tenure at Accenture, I honed my skills as an Associate Software Engineer, specializing in telecom mediation. Over the course of 10 months, I played a vital role as a support engineer in a challenging project, contributing to the seamless functioning of telecommunications systems.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2021 - 2022",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "ManageArtworks - Developer",
+    location: "Chennai, India",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "In my current role at ManageArtworks, I am an integral part of the implementation team, tasked with deploying the ManageArtwork product to diverse clients. My work revolves around the use of key technologies such as JavaScript, SQL, and C#. This experience has allowed me to deepen my expertise and contribute to the successful implementation of cutting-edge solutions for our clients.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2022 - present",
   },
 ] as const;
 
