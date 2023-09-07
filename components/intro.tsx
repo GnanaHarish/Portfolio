@@ -1,45 +1,58 @@
 "use client";
 
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 import dp from "@/public/dp.jpg";
-import { motion } from 'framer-motion';
-import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
-import { HiDownload } from 'react-icons/hi';
-import Link from 'next/link';
-import { FaGithub } from 'react-icons/fa';
-import { useSectionView } from '@/app/lib/hooks';
+import { motion } from "framer-motion";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+import { useSectionView } from "@/app/lib/hooks";
+import { useActiveSectionContext } from "@/app/context/active-section-context";
 
 export default function Intro() {
+  const { ref } = useSectionView("Home", 0.5);
 
-    const {ref} = useSectionView('Home', 0.5);
+  const {  setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
-    return (
-        <section id='home' className='
+  return (
+    <section
+      id="home"
+      className="
             mb-28
             max-w-[50rem]
             text-center
             sm:mb-0
             scroll-mt-[100rem]
-        '
-            ref={ref}
-        >
-            <div className='
+        "
+      ref={ref}
+    >
+      <div
+        className="
             flex
             items-center
             justify-center
-        '>
-                <div className='relative'>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: 'tween',
-                            duration: 0.2
-                        }}
-                    >
-                        <Image src={dp} alt='Not Gnana Harish' width="192" height="192" quality="95" priority={true}
-                            className='
+        "
+      >
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "tween",
+              duration: 0.2,
+            }}
+          >
+            <Image
+              src={dp}
+              alt="Not Gnana Harish"
+              width="192"
+              height="192"
+              quality="95"
+              priority={true}
+              className="
                         h-24
                         w-24
                         rounded-full
@@ -47,25 +60,27 @@ export default function Intro() {
                         border-[0.35rem]
                         border-white
                         shadow-xl
-                    '
-                        />
-                    </motion.div>
+                    "
+            />
+          </motion.div>
 
-                    <motion.span className='absolute bottom-0 right-0 text-4xl'
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: 'spring',
-                            stiffness: 125,
-                            delay: 0.1,
-                            duration: 0.7,
-                        }}
-                    >
-                        👋
-                    </motion.span>
-                </div>
-            </div>
-            <motion.h1 className='
+          <motion.span
+            className="absolute bottom-0 right-0 text-4xl"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 125,
+              delay: 0.1,
+              duration: 0.7,
+            }}
+          >
+            👋
+          </motion.span>
+        </div>
+      </div>
+      <motion.h1
+        className="
                 mb-10
                 mt-4
                 px-4
@@ -73,17 +88,19 @@ export default function Intro() {
                 font-medium
                 !leading-[1.5]
                 sm:text-4xl
-            '
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-            >
-                <span className='font-bold'>Hello, I'm Gnana Harish.</span> I'm an{" "}
-                <span className='font-bold'>Aspiring full-stack developer</span> with {" "}
-                <span className='font-bold'>2.5 years </span> of experience in software engineering. I enjoy building {" "}
-                <span className='italic'>full-stack sites & apps</span>. My focus is{" "}
-                <span className='underline'>MERN.</span>
-            </motion.h1>
-            <motion.div className='
+            "
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <span className="font-bold">Hello, I'm Gnana Harish.</span> I'm an{" "}
+        <span className="font-bold">Aspiring full-stack developer</span> with{" "}
+        <span className="font-bold">2.5 years </span> of experience in software
+        engineering. I enjoy building{" "}
+        <span className="italic">full-stack sites & apps</span>. My focus is{" "}
+        <span className="underline">MERN.</span>
+      </motion.h1>
+      <motion.div
+        className="
                 flex
                 flex-col
                 sm:flex-row
@@ -93,14 +110,16 @@ export default function Intro() {
                 px-4
                 text-lg
                 font-medium
-            '
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                    delay: 0.1,
-                }}
-            >
-                <Link href="#contact" className='
+            "
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.1,
+        }}
+      >
+        <Link
+          href="#contact"
+          className="
                     group
                      bg-gray-900
                     text-white
@@ -116,10 +135,17 @@ export default function Intro() {
                     hover:bg-gray-950
                     active:scale-105
                     transition       
-                '>
-                    Contact me here <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-                </Link>
-                <a className='
+                "
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
+        >
+          Contact me here{" "}
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+        </Link>
+        <a
+          className="
                     group
                   bg-white
                     px-7
@@ -134,14 +160,22 @@ export default function Intro() {
                     active:scale-105
                     transition 
                     cursor-pointer
-                    border
-                    border-black/10
-                ' href='/Resume.pdf' download>Download Resume <HiDownload className="
+                    borderBlack
+                "
+          href="/Resume.pdf"
+          download
+        >
+          Download Resume{" "}
+          <HiDownload
+            className="
                     opacity-60
                     group-hover: translate-y-1
                     transition
-                "/></a>
-                <a className='
+                "
+          />
+        </a>
+        <a
+          className="
                     bg-white
                     p-4
                     text-gray-700
@@ -155,15 +189,15 @@ export default function Intro() {
                     active:scale-105
                     transition 
                     cursor-pointer
-                    border
-                    border-black/10
-                '
-                    href='https://www.linkedin.com/in/gnana-harish'
-                    target='_blank'
-                >
-                    <BsLinkedin />
-                </a>
-                <a className='
+                    borderBlack
+                "
+          href="https://www.linkedin.com/in/gnana-harish"
+          target="_blank"
+        >
+          <BsLinkedin />
+        </a>
+        <a
+          className="
                     bg-white
                     p-4
                     text-gray-700
@@ -178,15 +212,14 @@ export default function Intro() {
                     active:scale-105
                     transition 
                     cursor-pointer
-                    border
-                    border-black/10
-                '
-                    href='https://github.com/GnanaHarish'
-                    target='_blank'
-                >
-                    <FaGithub />
-                </a>
-            </motion.div>
-        </section>
-    )
+                    borderBlack
+                "
+          href="https://github.com/GnanaHarish"
+          target="_blank"
+        >
+          <FaGithub />
+        </a>
+      </motion.div>
+    </section>
+  );
 }
