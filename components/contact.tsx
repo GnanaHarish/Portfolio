@@ -2,10 +2,11 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useSectionView } from "@/app/lib/hooks";
 import {sendEmail} from '@/actions/sendEmail';
+import SubmitBtn from "./submit-btn";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionView('Contact');
@@ -37,46 +38,17 @@ export default function Contact() {
       </p>
       <form className="mt-10 flex flex-col" action={
         async (FormData) => {
-          console.log("Client Side")
-          console.log(FormData.get("senderEmail"))
-          console.log(FormData.get("message"))
-          await sendEmail(FormData);
+          const {data, error} = await sendEmail(FormData);
+          if(error){
+            toast.error(error);
+            return;
+          }
+          toast.success('Mail sent successfully!')
         }
       }>
         <input type="email" className="h-14 rounded-lg borderBlack px-4" placeholder="Your Email" required maxLength={500} name="senderEmail"/>
         <textarea className="h-52 my-3 rounded-lg borderBlack p-4" placeholder="Your Message" required maxLength={5000} name="message"/>
-        <button
-          type="submit"
-          className="
-          group
-          flex
-          items-center
-          justify-center
-          gap-2
-          h-[3rem]
-          w-[8rem]
-          bg-gray-900
-          text-white
-          rounded-full
-          focus:scale-110
-          hover:scale-110
-          active:scale-105
-        hover:bg-gray-950
-          outline-none
-          transition-all
-        "
-        >
-          Submit{" "}
-          <FaPaperPlane
-            className="
-            text-xs
-            opacity-70
-            transition-all
-            group-hover:translate-x-1
-            group-hover:-translate-y-1
-          "
-          />
-        </button>
+        <SubmitBtn />
       </form>
     </motion.section>
   );
