@@ -161,6 +161,8 @@ export default function Intro() {
                     transition 
                     cursor-pointer
                     borderBlack
+                    dark:bg-white/10
+                    
                 "
           href="/Resume.pdf"
           download
@@ -190,6 +192,8 @@ export default function Intro() {
                     transition 
                     cursor-pointer
                     borderBlack
+                    dark:bg-white/10
+                    dark:text-white/60
                 "
           href="https://www.linkedin.com/in/gnana-harish"
           target="_blank"
@@ -213,6 +217,8 @@ export default function Intro() {
                     transition 
                     cursor-pointer
                     borderBlack
+                    dark:bg-white/10
+                    dark:text-white/60
                 "
           href="https://github.com/GnanaHarish"
           target="_blank"

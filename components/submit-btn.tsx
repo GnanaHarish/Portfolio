@@ -28,6 +28,8 @@ export default function SubmitBtn() {
           transition-all
           disabled:scale-100
           disabled:bg-opacity-65
+          dark:bg-white
+          dark:bg-opacity-10
         "
         disabled = {pending}
         >

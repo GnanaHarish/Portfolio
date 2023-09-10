@@ -43,9 +43,12 @@ export default function Project({
             relative
             sm:h-[20rem]
             rounded-lg
-            group-even:even:pl-8
+            sm:group-even:pl-8
             hover:bg-gray-200
             transition
+            dark:bg-white/10
+            dark:hover:bg-white/20
+            dark:text-white
         '>
             <div className='
                 pt-4
@@ -58,10 +61,10 @@ export default function Project({
                 flex
                 flex-col
                 h-full
-                group-even:ml-[20rem]
+                sm:group-even:ml-[20rem]
             '>
                 <h3 className='text-2xl font-semibold'>{title}</h3>
-                <p className='mt-2 leading-relaxed text-gray-700'>{description}</p>
+                <p className='mt-2 leading-relaxed text-gray-700 dark:text-white/70'>{description}</p>
                 <ul className='
                     flex
                     flex-wrap
@@ -80,6 +83,7 @@ export default function Project({
                             tracking-wider
                             text-white
                             rounded-full
+                            dark:text-white/70
                         '>{tag}</li>
                         ))
                     }
@@ -88,6 +92,8 @@ export default function Project({
 
             <Image src={imageUrl} alt="Projects i worked on" quality={95} className='
                 absolute 
+                hidden
+                sm:block
                 top-8 
                 -right-40 
                 w-[28.25rem] 
