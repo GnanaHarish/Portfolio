@@ -25,9 +25,9 @@ export default function About() {
         >
             <SectionHeading>About Me</SectionHeading>
             <p className="mb-3">
-                Welcome to my portfolio! I'm Gnana Harish, A {" "}
+                Welcome to my portfolio! I&apos;m Gnana Harish, A {" "}
                 <span className="font-medium">Computer Science</span> graduate with <span className="font-medium">2.5 years of software engineering experience</span>,{" "}
-                and I'm currently on a mission to excel as a
+                and I&apos;m currently on a mission to excel as a
                 <span className="font-medium"> Full Stack Developer with expertise in the MERN stack (MongoDB, Express.js, React, Node.js).</span>{" "}
 
                 <span className="italic">My favorite part of programming</span> is the
@@ -36,7 +36,7 @@ export default function About() {
                 <span className="font-medium">
                     React, Next.js, Node.js, and MongoDB
                 </span>
-                .  My portfolio showcases my dedication to creating efficient and scalable web applications, and I'm always eager to take on new challenges. Explore my work to see how I can bring your digital ideas to life!
+                .  My portfolio showcases my dedication to creating efficient and scalable web applications, and I&apos;m always eager to take on new challenges. Explore my work to see how I can bring  digital ideas to life!
 
             </p>
 
